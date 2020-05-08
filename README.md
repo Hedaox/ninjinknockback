@@ -2,7 +2,7 @@
 
 A simple knockback mod for DBC 1.4.68.
 
-This mod was created by me (Hedaox). This mod add a proportional knockback when players or entities are attacking eachover and also push back entities/players when stronger players are charging their ki. This mod works with the DBC mod made by Jinryuu (Now the mod is developped by his brother Ben). Here his website : http://main.jingames.net/.
+This mod was created by me (Hedaox). This mod add a proportional knockback when players or entities are attacking each over and also push back entities/players when stronger players are charging their ki. This mod works with the DBC mod made by Jinryuu (Now the mod is developped by his brother Ben). Here his website : http://main.jingames.net/.
 
 Here a video showing the knockback in action : https://www.youtube.com/watch?v=_-yLpAelcm8
 (I you want to know where this Gogeta is from check my other mod : https://github.com/Hedaox/ninjinentities)
