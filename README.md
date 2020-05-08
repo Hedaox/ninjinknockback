@@ -4,9 +4,10 @@ A simple knockback mod for DBC 1.4.68.
 
 This mod was created by me (Hedaox). This mod add a proportional knockback when players or entities are attacking eachover and also add a knockback when players are charging their ki. This mod works with the DBC mod made by Jinryuu (Now the mod is developped by his brother Ben). Here his website : http://main.jingames.net/.
 
-Here a video showing the knockback in action : https://www.youtube.com/watch?v=IVOn6NEMpUA
+Here a video showing the knockback in action : https://www.youtube.com/watch?v=_-yLpAelcm8
+(I you want to know where this Gogeta is from check my other mod : https://github.com/Hedaox/ninjinentities)
 
-The NPCs use the DBC AI meaning that they can fly and use Ki Attack. Also with the last version of DBC some of them have now an aura ! Also some of the NPCs are "trainers", this mean that they won't kill you if they beat you, instead they will put you into a KO state.
+The main motivation for making this mod is a scene where Mr. Satan is attacking Cell : https://www.youtube.com/watch?v=gEl8bxjRB90. Basically this mod will compare players/entities stats and then apply or not a knockback when attacking. Also when a player is charging his ki, every entities weaker than him will be push back. This should works with any basic mobs.
 
 # Licensing
 
