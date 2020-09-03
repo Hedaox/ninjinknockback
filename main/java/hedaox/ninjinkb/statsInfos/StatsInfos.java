@@ -18,7 +18,7 @@ import net.minecraft.server.MinecraftServer;
 import java.util.*;
 
 /**
- * Le but de cette classe est d'envoyer des paquets pour faire de la synchro Client-Serv et Serv-Client
+ * The purpose of this class is to send packets to do Client-Serv and Serv-Client sync
  * 
  * @author Hedaox
  */
@@ -28,7 +28,7 @@ public class StatsInfos {
 	int slowEvent = 0;
 	private List<EntityPlayer> listPlayers;
 
-	// Hash-Map de caractéristiques joueur à envoyé au serveur
+	// Hash-Map de caractÃ©ristiques joueur Ã  envoyÃ© au serveur
 	private static Map<UUID, Float> MeleeDmgPlayerMap = new HashMap<UUID, Float>();
 	private static Map<UUID, Float> PassDefPlayerMap = new HashMap<UUID, Float>();
 	private static Map<UUID, Float> SpiritPlayerMap = new HashMap<UUID, Float>();
@@ -90,7 +90,7 @@ public class StatsInfos {
 		return isFlyingPlayerMap;
 	}
 
-	// Hash-Map des caractéristiques joueurs à envoyé aux autres clients
+	// Hash-Map of player characteristics to be sent to other clients
 	private static Map<UUID, Float> MeleeDmgPlayerMapC = new HashMap<UUID, Float>();
 	private static Map<UUID, Float> PassDefPlayerMapC = new HashMap<UUID, Float>();
 	private static Map<UUID, Integer> ConstPlayerMapC = new HashMap<UUID, Integer>();
@@ -108,8 +108,8 @@ public class StatsInfos {
 	}
 
 	/**
-	 * Cette Fonction se met à jour à chaque tick du joueur côté client. Elle récupère les caractéristiques du
-	 * joueur puis envoie un paquet au serveur qui place les caractéristiques dans les Hash map correspondantes.
+	 * This Function updates with each client-side player tick. It recovers the characteristics of the
+	 * player then sends a packet to the server which places the characteristics in the corresponding hash maps.
 	 *
 	 * @param event
 	 * @author Hedaox
@@ -144,10 +144,6 @@ public class StatsInfos {
 			// System.out.println("JYearcAge :" + JRMCoreHJYC.JYCAge(player));
 			// System.out.println("TextureBlood : " + textureBlood);
 			// System.out.println("isFlying : " + isFlying);
-
-			//Afficher les groupes forge essentials du joueur
-			/*for (GroupEntry group : APIRegistry.perms.getPlayerGroups(UserIdent.get(player))) {
-				System.out.println("Player group : " + group.getGroup());
 			}*/
 
 			if (JRMCoreH.curStamina < JRMCoreH.maxStamina) {
@@ -165,8 +161,8 @@ public class StatsInfos {
 	}
 
 	/**
-	 * Cette Fonction se met à jour à chaque tick du serveur. Elle envoie pour chaque joueurs les caractéristiques
-	 * de chaque joueurs aux clients. Les clients placent ensuite ces données dans les hash map finnisant par C.
+	 * This Function is updated with each tick of the server. It sends for each player the characteristics
+	 * from each player to the customers. Customers then place this data in hash maps ending in C.
 	 *
 	 * @param event
 	 * @author Hedaox
@@ -185,7 +181,7 @@ public class StatsInfos {
 
 				this.listPlayers = MinecraftServer.getServer().getConfigurationManager().playerEntityList;
 				for (EntityPlayer loadedPlayer : this.listPlayers) {
-					//Mettre la stamina au max
+					//Put the stamina to the max
 					int[] PlyrAttrbts = JRMCoreH.PlyrAttrbts(loadedPlayer);
 					byte pwr = JRMCoreH.getByte(loadedPlayer, "jrmcPwrtyp");
 					byte rce = JRMCoreH.getByte(loadedPlayer, "jrmcRace");
@@ -193,27 +189,8 @@ public class StatsInfos {
 					int maxEnergy = JRMCoreH.stat(pwr, 5, PlyrAttrbts[5], rce, cls, JRMCoreH.SklLvl_KiBs(loadedPlayer, pwr));
 					JRMCoreH.setInt(maxEnergy, loadedPlayer, "jrmcStamina");
 
-					//ID Unique du joueur
+					//Unique Player ID
 					UUID playerUniqueId = loadedPlayer.getUniqueID();
-
-					//Récupère le World Zone de Forge Essentials
-					//WorldZone worldZone = APIRegistry.perms.getServerZone().getWorldZone(loadedPlayer.dimension);
-
-					//Boolean atLeastInOneAreaZone = false;
-					//int inAreaZoneNumber = 0;
-
-					//Est-ce que le joueur est dans au moins une zone safe
-					/*for (AreaZone az : worldZone.getAreaZones())
-					{
-						if(az.isPlayerInZone(loadedPlayer))
-						{
-							inAreaZoneNumber ++;
-						}
-						if(inAreaZoneNumber > 0)
-						{
-							atLeastInOneAreaZone = true;
-						}
-					}*/
 
 					if (!getConstPlayerMap().isEmpty() && getConstPlayerMap().get(playerUniqueId) != null) {
 
@@ -241,7 +218,7 @@ public class StatsInfos {
 
 						slowEvent = 0;
 
-						//ici pour tester en envoyant un message de debug depuis le seveur au client
+						//here to test by sending a debug message from the server to the client
 
 						/*MinecraftServer
 								.getServer()
@@ -268,7 +245,7 @@ public class StatsInfos {
 	}
 
 	/**
-	 * Récupère la défense passive du joueur.
+	 * Recovers the player's passive defense.
 	 *
 	 * @param player
 	 * @author Hedaox
@@ -301,7 +278,7 @@ public class StatsInfos {
 	}
 
 	/**
-	 * Récupère les dégât de mélée du joueur.
+	 * Recovers the player's melee damage.
 	 *
 	 * @param player
 	 * @author Hedaox
@@ -326,7 +303,7 @@ public class StatsInfos {
 	}
 
 	/**
-	 * Récupère les dégât de mélée du joueur.
+	 * Recover the player's ki power.
 	 *
 	 * @param player
 	 * @author Hedaox
