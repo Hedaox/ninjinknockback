@@ -25,6 +25,16 @@ If you want to modify the mod :
 
 You can found full license here : https://www.gnu.org/licenses/gpl-3.0.en.html or in the mod files.
 
+# Config
+
+- maxDamage : Any damage value under this value and above minDamage value will result in a normal knockback. Any damage above maxDamage will result in a big knockback. Value is in % of damage taken. Should be greater than minDamage. [range: 1.0E-5 ~ 100.0, default: 10.0]
+
+- minDamage : Default value : Any damage value under this value will result in no knockback at all. Value is in % of damage taken. Should be smaller than maxDamage. [range: 1.0E-5 ~ 100.0, default: 0.001]
+
+- strengthKnockback : Strength of the knockback. Send entities flying farther when attacking. [range: 1.0E-5 ~ 100.0, default: 1.0]
+
+- strengthKiKnockback : Strength of the ki knockback. Send entities flying farther when charging ki. [range: 1.0E-5 ~ 100.0, default: 1.0]
+
 # How to install the mod :
 
   - Install Forge 1.7.10 : https://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.7.10.html
