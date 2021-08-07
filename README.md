@@ -27,7 +27,7 @@ You can found full license here : https://www.gnu.org/licenses/gpl-3.0.en.html o
 
 # Config
 
-You can change config by editing the file in config/ninjinknockback.cfg in your minecraft files.
+You can change config by editing the file in config/ninjinknockback.cfg in your minecraft files. (Only for 1.2.0.0)
 
 - maxDamage : Any damage value under this value and above minDamage value will result in a normal knockback. Any damage above maxDamage will result in a big knockback. Value is in % of damage taken. Should be greater than minDamage. [range: 1.0E-5 ~ 100.0, default: 10.0]
 
