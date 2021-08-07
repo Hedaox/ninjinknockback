@@ -1,6 +1,6 @@
 # Ninjin Knockback
 
-A simple knockback mod for DBC 1.4.68 - 1.4.72.
+A simple knockback mod for DBC 1.4.68 - 1.4.73.
 
 This mod was created by me (Hedaox). This mod add a proportional knockback when players or entities are attacking each over and also push back entities/players when stronger players are charging their ki. This mod works with the DBC mod made by Jinryuu (Now the mod is developped by his brother Ben). Here his website : http://main.jingames.net/.
 
