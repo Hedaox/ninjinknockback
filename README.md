@@ -1,6 +1,6 @@
 # Ninjin Knockback
 
-A simple knockback mod for DBC 1.4.68 - 1.4.73.
+A simple knockback mod for DBC 1.4.74.
 
 This mod was created by me (Hedaox). This mod add a proportional knockback when players or entities are attacking each over and also push back entities/players when stronger players are charging their ki. This mod works with the DBC mod made by Jinryuu (Now the mod is developped by his brother Ben). Here his website : http://main.jingames.net/.
 
@@ -27,15 +27,31 @@ You can found full license here : https://www.gnu.org/licenses/gpl-3.0.en.html o
 
 # Config
 
-You can change config by editing the file in config/ninjinknockback.cfg in your minecraft files. (Only for 1.2.0.0)
+You can change config by editing the file in config/ninjinknockback.cfg in your minecraft files. (Only for 1.2.0.0 and more)
 
-- maxDamage : Any damage value under this value and above minDamage value will result in a normal knockback. Any damage above maxDamage will result in a big knockback. Value is in % of damage taken. Should be greater than minDamage. [range: 1.0E-5 ~ 100.0, default: 10.0]
+```
+knockback {
+    # Any damage value under this value and above minDamage value will result in a normal knockback. Any damage above maxDamage will result in a big knockback. Value is in % of damage taken. Should be greater than minDamage. [range: 0.0 ~ 100.0, default: 10.0]
+    S:maxDamage=10.0
 
-- minDamage : Default value : Any damage value under this value will result in no knockback at all. Value is in % of damage taken. Should be smaller than maxDamage. [range: 1.0E-5 ~ 100.0, default: 0.001]
+    # Default value : Any damage value under this value will result in no knockback at all. Value is in % of damage taken. Should be smaller than maxDamage. [range: 0.0 ~ 100.0, default: 0.001]
+    S:minDamage=0.001
 
-- strengthKnockback : Strength of the knockback. Send entities flying farther when attacking. [range: 1.0E-5 ~ 100.0, default: 1.0]
+    # Any damage value under this value will never result in a big knockback. [range: 0.0 ~ 1.0E8, default: 100.0]
+    S:minDamageForBigKnockback=100.0
 
-- strengthKiKnockback : Strength of the ki knockback. Send entities flying farther when charging ki. [range: 1.0E-5 ~ 100.0, default: 1.0]
+    # Any damage value under this value will never result in a very big knockback. [range: 0.0 ~ 1.0E8, default: 1000.0]
+    S:minDamageForBigKnockback2=1000.0
+
+    # Strength of the knockback. Send entities flying farther when attacking. [range: 0.0 ~ 1000.0, default: 1.0]
+    S:strengthKnockback=1.0
+}
+
+knockbackki {
+    # Strength of the ki knockback. Send entities flying farther when charging ki. [range: 0.0 ~ 1000.0, default: 1.0]
+    S:strengthKiKnockback=1.0
+}
+```
 
 # How to install the mod :
 
@@ -43,7 +59,7 @@ You can change config by editing the file in config/ninjinknockback.cfg in your 
   
   - Install DBC : http://main.jingames.net/minecraft-mods/dragon-block-c/downloads-and-installation/ 
   
-  - Put the mod in the ".Minecraft/mods" folder : https://github.com/Hedaox/ninjinknockback/releases/download/1.1.0.0/ninjinkb-1.7.10-1.1.0.0.jar
+  - Put the mod in the ".Minecraft/mods" folder : https://github.com/Hedaox/ninjinknockback/releases/download/1.1.0.0/ninjinkb-1.7.10-1.2.2.1.jar
 
 # Make a donation
 
