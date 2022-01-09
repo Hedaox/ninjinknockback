@@ -59,7 +59,7 @@ knockbackki {
   
   - Install DBC : http://main.jingames.net/minecraft-mods/dragon-block-c/downloads-and-installation/ 
   
-  - Put the mod in the ".Minecraft/mods" folder : https://github.com/Hedaox/ninjinknockback/releases/download/1.1.0.0/ninjinkb-1.7.10-1.2.2.1.jar
+  - Put the mod in the ".Minecraft/mods" folder : https://github.com/Hedaox/ninjinknockback/releases/download/1.2.2.1/ninjinkb-1.7.10-1.2.2.1.jar
 
 # Make a donation
 
