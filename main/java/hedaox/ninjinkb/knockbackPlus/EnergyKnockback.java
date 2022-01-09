@@ -3,6 +3,7 @@ package hedaox.ninjinkb.knockbackPlus;
 import JinRyuu.JRMCore.JRMCoreH;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent.PlayerTickEvent;
+import hedaox.ninjinkb.config.Config;
 import hedaox.ninjinkb.statsInfos.StatsInfos;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -38,7 +39,6 @@ public class EnergyKnockback {
 		if(!event.player.worldObj.isRemote) {
 
 			KiChargingPlayerMap = StatsInfos.getIsKiChargingPlayerMap();
-			FlyingPlayerMap = StatsInfos.getIsFlyingPlayerMap();
 			MeleeDmgPlayerMap = StatsInfos.getMeleeDmgPlayerMap();
 			PassDefPlayerMap = StatsInfos.getPassDefPlayerMap();
 			WillPlayerMap = StatsInfos.getWillPlayerMap();
@@ -77,7 +77,7 @@ public class EnergyKnockback {
 		        Vec3 v = Vec3.createVectorHelper(ex - px, ey - py, ez - pz).normalize();
 		        if(entityReceiving instanceof EntityPlayerMP && !((EntityPlayerMP) entityReceiving).capabilities.isCreativeMode)
 		        {   
-		        	if(FlyingPlayerMap.get(entityReceiving.getUniqueID()))
+		        	if(FlyingPlayerMap.containsKey(entityReceiving.getUniqueID()) && FlyingPlayerMap.get(entityReceiving.getUniqueID()))
 		        	{
 		        		entityReceiving.motionY = v.yCoord*knockback;
 		        	}
@@ -131,6 +131,6 @@ public class EnergyKnockback {
 		{
 			calculEnergyKnockBack = 0.15D;
 		}
-    	return calculEnergyKnockBack * JRMCoreH.getInt(playerPushing, "jrmcRelease")/100;
+    	return (calculEnergyKnockBack * JRMCoreH.getInt(playerPushing, "jrmcRelease")/100) * Config.strengthKiKnockback;
     }
 }

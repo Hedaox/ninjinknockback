@@ -25,14 +25,11 @@ public class EventAttackManager {
 	private float damageA = 0.0F;
 	private int maxLifeR = 20;
 	private float lostLife = 0.0F;
-	private float lvlA = 0;
-	private float lvlD = 0;
-	private float mindA = 0;
-	private float mindD = 0;
 	private boolean isPlayerDbcR = false;
 	private boolean isPlayerDbcA = false;
 	private float meleeDmgPlayerA = 0;
 	private float passDefPlayerR = 0;
+
 
 	/**
 	 * Event is launch everytime an entity attack. Is use for Knockback entities
@@ -62,7 +59,7 @@ public class EventAttackManager {
 						damageA = meleeDmgPlayerA + ammount;
 						maxLifeR = (int) event.entityLiving.getMaxHealth();
 
-						// System.out.println("¤¤¤Player is Attacking an Entity¤¤¤");
+						// System.out.println("ï¿½ï¿½ï¿½Player is Attacking an Entityï¿½ï¿½ï¿½");
 						// System.out.println("EntityA event ammount = " + event.ammount);
 						// System.out.println("EntityA Power = " + ammount);
 						// System.out.println("EntityR Receive Damage = " + damageA);
@@ -88,7 +85,7 @@ public class EventAttackManager {
 						maxLifeR = ConstPlayerMap.get(event.entityLiving
 								.getUniqueID());
 
-						// System.out.println("¤¤¤Entity is Attacking the Player¤¤¤");
+						// System.out.println("###Entity is Attacking the Player###");
 						// System.out.println("EntityA event ammount = " + event.ammount);
 						// System.out.println("EntityA Power = " + ammount);
 						// System.out.println("EntityR Receive Damage = " + damageA);
@@ -107,7 +104,7 @@ public class EventAttackManager {
 						damageA = meleeDmgPlayerA - passDefPlayerR + ammount;
 						maxLifeR = ConstPlayerMap.get(event.entityLiving.getUniqueID());
 
-						// System.out.println("¤¤¤Player is Attacking another Player¤¤¤");
+						// System.out.println("###Player is Attacking another Player###");
 						// System.out.println("EntityA event ammount = " + event.ammount);
 						// System.out.println("EntityA Power = " + ammount);
 						// System.out.println("EntityR Receive Damage = " + damageA);
@@ -129,7 +126,7 @@ public class EventAttackManager {
 						damageA = ammount;
 						maxLifeR = (int) event.entityLiving.getMaxHealth();
 
-						// System.out.println("¤¤¤Entity is Attacking an Entity¤¤¤");
+						// System.out.println("###Entity is Attacking an Entity###");
 						// System.out.println("EntityA event ammount = " + event.ammount);
 						// System.out.println("EntityA Power = " + ammount);
 						// System.out.println("EntityR Receive Damage = " + damageA);
@@ -139,7 +136,7 @@ public class EventAttackManager {
 
 					lostLife = damageA / maxLifeR * 100.0f;
 
-					KnockbackPlus.ApplyIntelligentKB(event, lostLife);
+					KnockbackPlus.ApplyIntelligentKB(event, lostLife, damageA);
 
 				}
 			} catch (NullPointerException e) {
