@@ -11,6 +11,7 @@ import hedaox.ninjinkb.network.server.*;
 import hedaox.ninjinkb.proxy.CommonProxy;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
+import org.lwjgl.Sys;
 
 import java.util.HashMap;
 import java.util.List;
@@ -85,7 +86,9 @@ public class StatsInfos {
 
             EntityPlayer player = event.player;
             float dmg = getMeleeDamage(player);
+            System.out.println("dmg : " + dmg);
             float passDef = getPassiveDefense(player);
+            System.out.println("passDef : " + passDef);
             float spirit = JRMCoreH.maxEnergy;
             float will = getKiPower(player);
             Boolean isFlying = DBCKiTech.floating;
