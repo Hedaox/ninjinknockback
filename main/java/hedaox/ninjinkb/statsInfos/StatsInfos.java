@@ -86,9 +86,7 @@ public class StatsInfos {
 
             EntityPlayer player = event.player;
             float dmg = getMeleeDamage(player);
-            System.out.println("dmg : " + dmg);
             float passDef = getPassiveDefense(player);
-            System.out.println("passDef : " + passDef);
             float spirit = JRMCoreH.maxEnergy;
             float will = getKiPower(player);
             Boolean isFlying = DBCKiTech.floating;
