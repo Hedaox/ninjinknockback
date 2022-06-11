@@ -21,7 +21,6 @@ public class KnockbackPlus {
     private static float maxDamage = Config.maxDamage;
 
     private static HashMap<UUID, Long> lastPunchTimerMap = new HashMap<>();
-    private static final Long LAST_PUNCH_TIME = 500L;
     // Prevent multiple Kb For Players (the first is pve, second pvp)
     private static int authorizeKb = 0;
     private static int authorizeKb2 = 0;
@@ -42,7 +41,7 @@ public class KnockbackPlus {
                 Entity entityVictim = event.entity;
                 Entity entityAttacker = event.source.getEntity();
 
-                if (!(entityAttacker instanceof EntityPlayerMP) || !lastPunchTimerMap.containsKey(entityAttacker.getUniqueID()) || (lastPunchTimerMap.get(entityAttacker.getUniqueID()) != null && (System.currentTimeMillis() - lastPunchTimerMap.get(entityAttacker.getUniqueID())) > LAST_PUNCH_TIME)) {
+                if (!(entityAttacker instanceof EntityPlayerMP) || !lastPunchTimerMap.containsKey(entityAttacker.getUniqueID()) || (lastPunchTimerMap.get(entityAttacker.getUniqueID()) != null && (System.currentTimeMillis() - lastPunchTimerMap.get(entityAttacker.getUniqueID())) > Config.punchCooldDown)) {
 
                     // if creative cancel kb
                     if (entityVictim instanceof EntityPlayerMP && ((EntityPlayerMP) entityVictim).theItemInWorldManager.isCreative()) {
@@ -56,7 +55,7 @@ public class KnockbackPlus {
                     // if the percentage of lost life is under 0.001% then the entity does not receive any damage
                     if (lostLife <= minDamage) {
 
-                        System.out.println("FailPunch");
+                        //System.out.println("FailPunch");
 
                         //Cancel attack
                         event.setCanceled(true);
@@ -78,14 +77,14 @@ public class KnockbackPlus {
 
                         //We apply the knockback, except from projectile
                         if (!event.source.isProjectile()) {
-                            System.out.println("SuperPunch");
+                            //System.out.println("SuperPunch");
 
                             ApplyKB(event, (lostLife / 20) * Config.strengthKnockback);
                         }
                     }
                 } else {
                     //Cancel attack
-                    System.out.println("Canceled");
+                    //System.out.println("Canceled");
                     event.setCanceled(true);
                 }
             } else {

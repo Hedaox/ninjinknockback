@@ -6,7 +6,7 @@ import net.minecraftforge.common.config.Configuration;
 public class Config {
 
     private static final String CATEGORY_KNOCKBACK = "knockback";
-    private static final String CATEGORY_KNOCKBACKKI= "knockbackki";
+    private static final String CATEGORY_KNOCKBACKKI = "knockbackki";
 
     // This values below you can access elsewhere in your mod:
     public static float minDamage = 0.001F;
@@ -15,6 +15,7 @@ public class Config {
     public static float minDamageForBigKnockback2 = 1000F;
     public static float strengthKnockback = 1F;
     public static float strengthKiKnockback = 1F;
+    public static float punchCooldDown = 0.1F;
 
     // Call this from CommonProxy.preInit(). It will create our config if it doesn't
     // exist yet and read the values if it does exist.
@@ -40,6 +41,7 @@ public class Config {
         minDamageForBigKnockback = cfg.getFloat("minDamageForBigKnockback", CATEGORY_KNOCKBACK, 100F, 0F, 100000000F, "Any damage value under this value will never result in a big knockback.");
         minDamageForBigKnockback2 = cfg.getFloat("minDamageForBigKnockback2", CATEGORY_KNOCKBACK, 1000F, 0F, 100000000F, "Any damage value under this value will never result in a very big knockback.");
         strengthKnockback = cfg.getFloat("strengthKnockback", CATEGORY_KNOCKBACK, 1F, 0F, 1000F, "Strength of the knockback. Send entities flying farther when attacking.");
+        punchCooldDown = cfg.getFloat("punchCooldDown", CATEGORY_KNOCKBACK, 0.1F, 0F, 1000F, "CoolDown for the punch, prevent some bugs with players punching too quickly.");
         cfg.addCustomCategoryComment(CATEGORY_KNOCKBACK, "Knockback Energy configuration");
         strengthKiKnockback = cfg.getFloat("strengthKiKnockback", CATEGORY_KNOCKBACKKI, 1F, 0F, 1000F, "Strength of the ki knockback. Send entities flying farther when charging ki.");
     }

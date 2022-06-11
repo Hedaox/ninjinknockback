@@ -11,7 +11,7 @@ public class ModVars {
 	public static final String MOD_name = "Ninjin KnockBack mod for DBC";
 	
 	//Mod version
-	public static final String MOD_version = "1.7.10-1.2.3.0";
+	public static final String MOD_version = "1.7.10-1.2.4.1";
 		
 	//Mod code
 	public static final String MOD_ID = "ninjinkb";
